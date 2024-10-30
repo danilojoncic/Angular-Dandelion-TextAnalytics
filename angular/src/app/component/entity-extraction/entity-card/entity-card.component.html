@@ -1,0 +1,9 @@
+<div class="card" style="width: 18rem;">
+  <img *ngIf="entity.image" class="card-img-top" [src]="entity.image.thumbnail" loading="lazy" alt="" />
+  <div class="card-body">
+    <h5 class="card-title">{{entity.title}}</h5>
+    <div class="card-footer mt-2">
+      <app-entity-modal [entity]="entity"></app-entity-modal>
+    </div>
+  </div>
+</div>

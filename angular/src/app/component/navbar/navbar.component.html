@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded mt-4 px-4">
+  <div class="container-fluid">
+    <!-- Navbar Start -->
+    <a [routerLink]="'/'" class="navbar-brand text-xl fw-bold">Dandelion (ne volim Angular)</a>
+
+    <!-- Navbar Center (Collapsible) -->
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a [routerLink]="'/'" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="'entity-extraction'" routerLinkActive="active" class="nav-link">Entity Extraction</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="'text-similarity'" class="nav-link">Text Similarity</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="'language-detection'" class="nav-link">Language Detection</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="'sentiment-analysis'" class="nav-link">Sentiment Analysis</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="'history'" class="nav-link">History</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Navbar End (empty) -->
+  </div>
+</nav>

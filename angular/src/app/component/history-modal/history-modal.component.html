@@ -1,0 +1,25 @@
+<div class="container">
+  <!-- Title -->
+  <h2 class="h4 fw-bold mb-4">History</h2>
+
+  <!-- Table -->
+  <div class="table-responsive">
+    <table *ngIf="historyArray.length > 0" class="table table-striped table-hover">
+      <thead class="table-dark">
+      <tr>
+        <th>Time</th>
+        <th>Type</th>
+        <th>Query</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let history of historyArray">
+        <td>{{ history.timestamp }}</td>
+        <td class="fw-bold">{{ history.type }}</td>
+        <td>{{ history.query }}</td>
+      </tr>
+      </tbody>
+    </table>
+    <span *ngIf="historyArray.length === 0" class="text-muted">No Data!</span>
+  </div>
+</div>

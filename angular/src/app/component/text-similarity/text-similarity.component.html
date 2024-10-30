@@ -1,0 +1,41 @@
+<!-- Title -->
+<h1 class="mb-2">Text Similarity</h1>
+
+<form #similarityForm="ngForm" (submit)="onSubmit(similarityForm)" class="p-6 rounded-xl shadow-lg max-w-full bg-white">
+  <!-- Input Row -->
+  <div class="grid grid-cols-2 gap-8">
+    <!-- TextArea -->
+    <div>
+            <textarea
+              class="textarea-ghost-primary textarea-block textarea w-96" rows="10"
+              placeholder="Text 1"
+              ngModel
+              name="text1"
+              required></textarea>
+    </div>
+    <!-- TextArea -->
+    <div>
+            <textarea
+              class="textarea-ghost-primary textarea-block textarea w-96" rows="10"
+              placeholder="Text 2"
+              ngModel
+              name="text2"
+              required></textarea>
+    </div>
+  </div>
+  <!-- Submit Button -->
+  <div class="flex justify-end gap-2 mt-4">
+    <button [disabled]="similarityForm.invalid" type="submit" class="btn btn-outline-primary">Compute Similarity</button>
+  </div>
+</form>
+
+<!-- Display Results -->
+<div class="mt-4 grid grid-cols-1">
+  <div *ngIf="hasResults">
+    <div class="bg-white rounded-lg shadow-lg p-4">
+      <h2 class="text-xl font-bold">Similarity</h2>
+      <p class="text-2xl font-bold">{{ similarity }}%</p>
+    </div>
+  </div>
+</div>
+

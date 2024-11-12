@@ -9,8 +9,6 @@ import { DandelionApiService } from 'src/app/services/dandelion-api';
 export class TextSimilarityComponent {
 
   dandelionService = inject(DandelionApiService)
-  toaster = inject(ToastrService)
-
   similarity: number = 0;
   hasResults: boolean = false;
 
@@ -28,11 +26,9 @@ export class TextSimilarityComponent {
       (response) => {
         this.similarity = +(response.similarity * 100).toFixed(2);
         this.hasResults = true;
-        this.toaster.success("Data fetched successfully!");
       },
       (error) => {
         this.hasResults = false;
-        this.toaster.error("Error while fetching data from Dandelion API!");
       }
     )
   }

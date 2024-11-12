@@ -12,8 +12,6 @@ export class SentimentAnalysisComponent {
 
 
   dandelionService = inject(DandelionApiService)
-  toaster = inject(ToastrService)
-
   sentimentResult: SentimentResponse = {} as SentimentResponse;
   hasResults: boolean = false;
 
@@ -32,11 +30,9 @@ export class SentimentAnalysisComponent {
       (response) => {
         this.sentimentResult = response;
         this.hasResults = true;
-        this.toaster.success("Data fetched successfully!");
       },
       (error) => {
         this.hasResults = false;
-        this.toaster.error(error.error.message, "Error");
       }
     )
   }

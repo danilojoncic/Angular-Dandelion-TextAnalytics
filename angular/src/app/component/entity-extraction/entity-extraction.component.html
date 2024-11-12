@@ -1,21 +1,16 @@
-<!-- Title -->
 <h1 class="mb-4">Entity Extraction</h1>
 
-<!-- Form -->
 <form #entityForm="ngForm" (submit)="onSubmit(entityForm)" class="p-4 rounded-lg shadow-lg bg-white">
-  <!-- Input Row -->
   <div class="row mb-3">
-    <!-- min_confidence -->
     <div class="col-md-6">
-      <label class="form-label fw-bold">min_confidence</label>
+      <label class="form-label fw-bold">Min Confidence</label>
       <div class="position-relative">
-        <label class="position-absolute top-50 end-0 translate-middle-y">1</label>
-        <input type="range" name="min_confidence" ngModel="0.6" class="form-range" step="0.1" min="0" max="1" />
         <label class="position-absolute top-50 start-0 translate-middle-y">0</label>
+        <input type="range" name="min_confidence" ngModel="0.6" class="form-range" step="0.1" min="0" max="1" />
+        <label class="position-absolute top-50 end-0 translate-middle-y">1</label>
       </div>
     </div>
 
-    <!-- Include checkboxes -->
     <div class="col-md-6">
       <label class="form-label fw-bold">Include</label>
       <div class="form-check form-check-inline">
@@ -33,7 +28,6 @@
     </div>
   </div>
 
-  <!-- TextArea -->
   <div class="mb-3">
     <label for="text" class="form-label">Text</label>
     <textarea
@@ -45,13 +39,11 @@
       required></textarea>
   </div>
 
-  <!-- Submit Button -->
   <div class="text-end">
     <button [disabled]="entityForm.invalid" type="submit" class="btn btn-outline-primary">Extract Entities</button>
   </div>
 </form>
 
-<!-- Loop Entities -->
 <section class="mt-4 row g-3">
   <div *ngFor="let entity of entities" class="col-md-4">
     <app-entity-card [entity]="entity"></app-entity-card>

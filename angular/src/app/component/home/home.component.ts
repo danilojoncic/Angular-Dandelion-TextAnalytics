@@ -10,7 +10,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class HomeInputComponent{
   cookieService = inject(CookieService)
-  toaster = inject(ToastrService)
 
   tokenInput = this.cookieService.get('token');
 
@@ -22,11 +21,5 @@ export class HomeInputComponent{
   onSubmit(form: NgForm){
     const token = form.value.token;
     this.cookieService.set('token', token);
-    this.toaster.success('Token set successfully!', 'Success!', {
-      timeOut: 2000,
-      progressBar: true,
-      progressAnimation: 'increasing',
-      positionClass: 'toast-top-right',
-    });
   }
 }

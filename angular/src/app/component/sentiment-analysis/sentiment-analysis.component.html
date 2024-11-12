@@ -3,9 +3,7 @@
 
 <!-- Form -->
 <form #sentimentForm="ngForm" (submit)="onSubmit(sentimentForm)" class="p-4 rounded shadow-lg bg-white">
-  <!-- Input Row -->
   <div class="mb-3">
-    <!-- Select Language -->
     <label for="lang" class="form-label fw-bold">Language</label>
     <select class="form-select" name="lang" ngModel="en - English">
       <option value="en">en - English</option>
@@ -14,25 +12,21 @@
     </select>
   </div>
 
-  <!-- TextArea -->
   <div class="mb-3">
     <label for="text" class="form-label fw-bold">Text</label>
     <textarea
       class="form-control"
       rows="6"
-      placeholder="The Mona Lisa is a sixteenth century oil painting created by Leonardo. It's held at the Louvre in Paris."
       ngModel
       name="text"
       required></textarea>
   </div>
 
-  <!-- Submit Button -->
   <div class="d-flex justify-content-end">
     <button [disabled]="sentimentForm.invalid" type="submit" class="btn btn-outline-primary">Analyse</button>
   </div>
 </form>
 
-<!-- Display Results -->
 <div class="mt-4">
   <div *ngIf="hasResults" class="card shadow-sm">
     <div class="card-body d-flex justify-content-evenly">

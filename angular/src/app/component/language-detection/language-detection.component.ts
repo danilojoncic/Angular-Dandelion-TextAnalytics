@@ -11,8 +11,6 @@ import { DetectedLang } from 'src/app/dto/dtos';
 export class LanguageDetectionComponent {
 
   dandelionService = inject(DandelionApiService)
-  toaster = inject(ToastrService)
-
   detectedLanguages: DetectedLang[] = [];
   hasResults: boolean = false;
 
@@ -28,12 +26,10 @@ export class LanguageDetectionComponent {
 
     this.dandelionService.getLanguageDetectionResults(text, clean).subscribe(
       (response) => {
-        this.toaster.success("Data fetched successfully!");
         this.detectedLanguages = response.detectedLangs;
         this.hasResults = true;
       },
       (error) => {
-        this.toaster.error(error.error.message, "Error");
         this.hasResults = false;
       }
     )

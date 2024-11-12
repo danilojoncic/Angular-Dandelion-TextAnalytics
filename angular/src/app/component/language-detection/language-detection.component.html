@@ -1,35 +1,27 @@
-<!-- Title -->
 <h1 class="mb-3">Language Detection</h1>
 
-<!-- Form -->
 <form #languageForm="ngForm" (submit)="onSubmit(languageForm)" class="p-4 rounded shadow-lg bg-white">
-  <!-- Input Row -->
   <div class="mb-3">
-    <!-- Checkbox -->
     <div class="form-check">
       <input id="clean" type="checkbox" class="form-check-input" />
       <label for="clean" class="form-check-label">Clean</label>
     </div>
   </div>
 
-  <!-- TextArea -->
   <div class="mb-3">
     <textarea
       class="form-control"
       rows="6"
-      placeholder="The Mona Lisa is a sixteenth century oil painting created by Leonardo. It's held at the Louvre in Paris."
       ngModel
       name="text"
       required></textarea>
   </div>
 
-  <!-- Submit Button -->
   <div class="d-flex justify-content-end">
     <button [disabled]="languageForm.invalid" type="submit" class="btn btn-outline-primary">Detect</button>
   </div>
 </form>
 
-<!-- Display Results -->
 <div class="mt-4">
   <div *ngIf="hasResults">
     <div *ngFor="let detected of detectedLanguages" class="mb-3">
